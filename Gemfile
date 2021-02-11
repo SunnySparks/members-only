@@ -5,6 +5,11 @@ ruby '2.6.3'
 
 gem 'rubocop', '~>0.81.0'
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+gem 'hirb', '~> 0.7.3'
+gem 'bulma-rails', '~> 0.9.1'
+gem 'simple_form', '~> 5.1'
+gem 'gravatar_image_tag', '~> 1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
@@ -45,6 +50,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'guard', '~> 2.16', '>= 2.16.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do
