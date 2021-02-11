@@ -14,6 +14,7 @@ class ClubhousesTest < ApplicationSystemTestCase
     visit clubhouses_url
     click_on "New Clubhouse"
 
+    fill_in "Post", with: @clubhouse.post
     click_on "Create Clubhouse"
 
     assert_text "Clubhouse was successfully created"
@@ -24,6 +25,7 @@ class ClubhousesTest < ApplicationSystemTestCase
     visit clubhouses_url
     click_on "Edit", match: :first
 
+    fill_in "Post", with: @clubhouse.post
     click_on "Update Clubhouse"
 
     assert_text "Clubhouse was successfully updated"

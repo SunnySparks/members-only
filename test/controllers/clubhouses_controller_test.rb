@@ -17,7 +17,7 @@ class ClubhousesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create clubhouse" do
     assert_difference('Clubhouse.count') do
-      post clubhouses_url, params: { clubhouse: {  } }
+      post clubhouses_url, params: { clubhouse: { post: @clubhouse.post } }
     end
 
     assert_redirected_to clubhouse_url(Clubhouse.last)
@@ -34,7 +34,7 @@ class ClubhousesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update clubhouse" do
-    patch clubhouse_url(@clubhouse), params: { clubhouse: {  } }
+    patch clubhouse_url(@clubhouse), params: { clubhouse: { post: @clubhouse.post } }
     assert_redirected_to clubhouse_url(@clubhouse)
   end
 

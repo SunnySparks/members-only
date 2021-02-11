@@ -64,6 +64,6 @@ class ClubhousesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def clubhouse_params
-      params.fetch(:clubhouse, {})
+      params.require(:clubhouse).permit(:post)
     end
 end
