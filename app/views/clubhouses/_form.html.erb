@@ -1,0 +1,17 @@
+<%= form_with(model: clubhouse) do |form| %>
+  <% if clubhouse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clubhouse.errors.count, "error") %> prohibited this clubhouse from being saved:</h2>
+
+      <ul>
+        <% clubhouse.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

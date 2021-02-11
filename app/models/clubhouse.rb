@@ -1,0 +1,2 @@
+class Clubhouse < ApplicationRecord
+end
