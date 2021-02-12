@@ -28,7 +28,7 @@ class ClubhousesController < ApplicationController
 
     respond_to do |format|
       if @clubhouse.save
-        format.html { redirect_to @clubhouse, notice: "Post was successfully created." }
+        format.html { redirect_to root_path, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @clubhouse }
       else
         format.html { render :new, status: :unprocessable_entity }
