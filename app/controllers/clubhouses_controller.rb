@@ -3,11 +3,12 @@ class ClubhousesController < ApplicationController
 
   # GET /clubhouses or /clubhouses.json
   def index
-    @clubhouses = Clubhouse.all
+    @clubhouses = Clubhouse.all.order("created_at DESC")
   end
 
   # GET /clubhouses/1 or /clubhouses/1.json
   def show
+    @clubhouse = Clubhouse.new
   end
 
   # GET /clubhouses/new
@@ -17,6 +18,7 @@ class ClubhousesController < ApplicationController
 
   # GET /clubhouses/1/edit
   def edit
+    @clubhouse = Clubhouse.new
   end
 
   # POST /clubhouses or /clubhouses.json
@@ -25,7 +27,7 @@ class ClubhousesController < ApplicationController
 
     respond_to do |format|
       if @clubhouse.save
-        format.html { redirect_to @clubhouse, notice: "Clubhouse was successfully created." }
+        format.html { redirect_to @clubhouse, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @clubhouse }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class ClubhousesController < ApplicationController
   def update
     respond_to do |format|
       if @clubhouse.update(clubhouse_params)
-        format.html { redirect_to @clubhouse, notice: "Clubhouse was successfully updated." }
+        format.html { redirect_to @clubhouse, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @clubhouse }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +53,7 @@ class ClubhousesController < ApplicationController
   def destroy
     @clubhouse.destroy
     respond_to do |format|
-      format.html { redirect_to clubhouses_url, notice: "Clubhouse was successfully destroyed." }
+      format.html { redirect_to clubhouses_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
     end
   end
