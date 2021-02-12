@@ -4,6 +4,7 @@ class ClubhousesController < ApplicationController
   # GET /clubhouses or /clubhouses.json
   def index
     @clubhouses = Clubhouse.all.order("created_at DESC")
+    @clubhouse = Clubhouse.new
   end
 
   # GET /clubhouses/1 or /clubhouses/1.json
