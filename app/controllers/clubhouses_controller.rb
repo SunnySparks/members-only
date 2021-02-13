@@ -1,5 +1,6 @@
 class ClubhousesController < ApplicationController
   before_action :set_clubhouse, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except [:show]
 
   # GET /clubhouses or /clubhouses.json
   def index
